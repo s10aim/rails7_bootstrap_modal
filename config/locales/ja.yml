@@ -17,9 +17,9 @@ ja:
         female: 女性
         other: その他
   errors:
-  messages:
-    email: には、有効なメールアドレスを指定してください
-    tel: には、有効な電話番号を指定してください
+    messages:
+      email: には、有効なメールアドレスを指定してください
+      tel: には、有効な電話番号を指定してください
   date:
     formats:
       default: '%Y年%-m月%-d日'

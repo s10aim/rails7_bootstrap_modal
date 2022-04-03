@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: %i[show edit update destroy]
   PER_PAGE = 10
 
   def index
@@ -12,7 +12,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    render :new, status: :unprocessable_entity unless @user.save
+    if @user.save
+      # 一覧表示は1ページ目に戻す
+      @users = User.order(created_at: :desc).page(nil).per(PER_PAGE)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show; end
