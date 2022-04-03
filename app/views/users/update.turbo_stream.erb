@@ -1,0 +1,7 @@
+<%= turbo_stream.update "user-modal-content" do %>
+  <%= render "show" %>
+<% end %>
+<%= turbo_stream.update @user do %>
+  <%= render @user %>
+  <%# <%= render partial: "user", locals: { user: @user } %>
+<% end %>
