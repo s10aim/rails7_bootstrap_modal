@@ -1,0 +1,5 @@
+<%= turbo_stream.update "users" do %>
+  <%= render @users %>
+  <%# NOTE: actionを指定しないと, showアクションへのリンクになる %>
+  <%= paginate @users, params: { action: "index" } %>
+<% end %>
