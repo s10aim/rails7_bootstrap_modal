@@ -5,3 +5,6 @@
   <%= render @users %>
   <%= paginate @users %>
 <% end %>
+<%= turbo_stream.replace "flash" do %>
+  <%= render "partials/flash" %>
+<% end %>

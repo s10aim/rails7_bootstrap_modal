@@ -5,3 +5,6 @@
   <%= render @user %>
   <%# <%= render partial: "user", locals: { user: @user } %>
 <% end %>
+<%= turbo_stream.replace "flash" do %>
+  <%= render "partials/flash" %>
+<% end %>
